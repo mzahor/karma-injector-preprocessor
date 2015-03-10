@@ -1,0 +1,26 @@
+{
+  "name": "karma-injector-preprocessor",
+  "version": "0.0.1",
+  "description": "Karma preprocessor for injecting any content before any file served by Karma",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mzahor/karma-injector-preprocessor"
+  },
+  "keywords": [
+    "karma",
+    "inject",
+    "content",
+    "preprocessor",
+    "file"
+  ],
+  "author": "Marian Zagoruiko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzahor/karma-injector-preprocessor/issues"
+  },
+  "homepage": "https://github.com/mzahor/karma-injector-preprocessor"
+}
