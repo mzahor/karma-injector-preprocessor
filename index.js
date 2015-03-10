@@ -1,20 +1,21 @@
+var createInjectorPreprocessor = function(logger, config) {
+	config = typeof config === 'object' ? config : {
+        injection: ''
+    };
 
-var createInjectorPreprocessor = function(logger, basePath, config) {
-  config = typeof config === 'object' ? config : {
-    injection: ''
-  };
+    config.injection = config.injection || '';
 
-  config.injection = config.injection || '';
+    var log = logger.create('preprocessor.injector');
 
-  var log = logger.create('preprocessor.injector');
-
-  return function(content, file, done) {
-    log.debug('Processing "%s".', file.originalPath);
-console.log(done);
-    done(injection + content);
-  };
+    return function(content, file, done) {
+        log.debug('Processing "%s".', file.originalPath);
+        done(config.injection + content);
+    };
 };
 
-createInjectorPreprocessor.$inject = ['logger', 'config.basePath', 'config.injectorPreprocessor'];
+createInjectorPreprocessor.$inject = ['logger', 'config.injectorPreprocessor'];
 
-module.exports = createInjectorPreprocessor;
+// PUBLISH DI MODULE
+module.exports = {
+    'preprocessor:injector': ['factory', createInjectorPreprocessor]
+};
