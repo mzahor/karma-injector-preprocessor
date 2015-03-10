@@ -1,6 +1,6 @@
 {
   "name": "karma-injector-preprocessor",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Karma preprocessor for injecting any content before any file served by Karma",
   "main": "index.js",
   "scripts": {
